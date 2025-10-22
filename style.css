@@ -1,0 +1,377 @@
+/* --- ETHEL JOSHUWA Color Palette --- */
+:root {
+    --color-green: #114F40;        /* Deep Forest Green (Primary) */
+    --color-tan: #D1A47A;          /* Muted Sand/Tan (Accent/CTA) */
+    --color-white: #FFFFFF;        /* Pure White (Background) */
+    --color-text-dark: #333333;    /* Standard text color */
+}
+
+/* --- Base Styling --- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--color-text-dark);
+    background-color: var(--color-white);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h2, h3, h4 {
+    color: var(--color-green);
+}
+
+/* Helper Class for Color Use */
+.tan-text {
+    color: var(--color-tan) !important;
+}
+
+/* --- Header & Navigation --- */
+header {
+    background-color: var(--color-green);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--color-white);
+    margin: 0;
+    font-size: 1.8em;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav a {
+    color: var(--color-white);
+    text-decoration: none;
+    padding: 10px 15px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--color-tan);
+}
+
+/* --- Call-to-Action Buttons --- */
+.cta-button {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    white-space: nowrap; 
+}
+
+.primary-cta {
+    background-color: var(--color-tan);
+    color: var(--color-white); 
+}
+
+.primary-cta:hover {
+    background-color: #bfa079; 
+    transform: translateY(-2px);
+}
+
+.secondary-cta {
+    background-color: var(--color-green);
+    color: var(--color-white);
+    border: 2px solid var(--color-tan);
+}
+
+.secondary-cta:hover {
+    background-color: #0d382f;
+    border-color: var(--color-white);
+}
+
+.center-cta {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.large-cta {
+    padding: 15px 30px;
+    font-size: 1.1em;
+}
+
+
+/* --- Hero Section --- */
+.hero {
+    height: 450px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+    overflow: hidden; /* Important for containing the image */
+}
+
+/* New: Style for the Hero background image */
+.hero-background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image covers the area */
+    z-index: 0;
+}
+
+/* Overlay for text clarity */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(17, 79, 64, 0.6); 
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: var(--color-white);
+    max-width: 80%;
+}
+
+.hero h2 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    color: var(--color-tan); 
+}
+
+.hero p {
+    font-size: 1.3em;
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+/* --- Trust Bar/Metrics --- */
+.trust-bar {
+    background-color: #f8f8f8; 
+    padding: 50px 0;
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    text-align: center;
+}
+
+.metric i {
+    color: var(--color-green);
+    margin-bottom: 10px;
+}
+
+.metric span {
+    font-size: 3.5em;
+    font-weight: 700;
+    color: var(--color-tan); 
+}
+
+.plus-text {
+    font-size: 0.5em;
+    vertical-align: top;
+    color: var(--color-tan);
+    font-weight: bold;
+}
+
+.metric p {
+    margin: 5px 0 0;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    font-weight: 600;
+    color: var(--color-text-dark);
+}
+
+/* --- Services Section --- */
+.services {
+    padding: 60px 0;
+}
+
+.services h3 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 50px;
+}
+
+/* Styles for Detailed Service Section */
+.category-heading {
+    text-align: center;
+    font-size: 1.8em;
+    margin: 60px 0 30px 0;
+    border-bottom: 2px solid var(--color-tan);
+    padding-bottom: 10px;
+}
+
+.detailed-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 30px; 
+}
+
+.service-card {
+    border: 1px solid #e0e0e0;
+    padding: 20px; 
+    text-align: center;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+    min-height: 280px; 
+}
+
+.service-card:hover {
+    box-shadow: 0 10px 25px rgba(17, 79, 64, 0.15); 
+    transform: translateY(-8px);
+}
+
+/* Container for service image to control its size */
+.service-image-container {
+    height: 120px; 
+    overflow: hidden; 
+    margin-bottom: 15px;
+    border-radius: 4px;
+    background-color: #e6e6e6; /* Placeholder color before image is loaded */
+}
+
+/* New: Style for the actual image inside the container */
+.service-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image fills the container without distortion */
+}
+
+.service-card h4 {
+    margin-top: 5px; 
+    font-size: 1.2em;
+}
+
+.service-card p {
+    font-size: 0.9em; 
+    line-height: 1.5;
+}
+
+
+/* --- Footer --- */
+footer {
+    background-color: var(--color-green);
+    padding: 30px 0;
+    text-align: center;
+}
+
+footer .container {
+    color: var(--color-white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer a {
+    color: var(--color-tan); 
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+/* ======================================= */
+/* ====== MOBILE OPTIMIZATION START ====== */
+/* ======================================= */
+
+@media (max-width: 900px) {
+    
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    nav ul {
+        justify-content: center;
+        margin: 10px 0;
+    }
+
+    .hero h2 {
+        font-size: 2.5em;
+    }
+    .hero p {
+        font-size: 1.1em;
+    }
+
+    .metrics-grid,
+    .services-grid,
+    .detailed-grid { 
+        grid-template-columns: 1fr; 
+        gap: 40px; 
+    }
+    
+    .metric {
+        padding: 10px 0;
+        border-bottom: 1px solid #e0e0e0; 
+    }
+    .metric:last-child {
+        border-bottom: none;
+    }
+    
+    footer .container {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    
+    .container {
+        padding: 0 15px; 
+    }
+    
+    header .logo {
+        font-size: 1.5em;
+    }
+
+    nav ul {
+        flex-wrap: wrap; 
+        margin-top: 5px;
+    }
+
+    .hero {
+        height: 350px;
+    }
+    
+    .hero h2 {
+        font-size: 2em; 
+    }
+    
+    .hero p {
+        font-size: 1em;
+    }
+    
+    .cta-button.large-cta {
+        padding: 12px 20px;
+        font-size: 1em;
+    }
+}
