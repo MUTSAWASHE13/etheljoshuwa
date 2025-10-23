@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ETHEL JOSHUWA - Project Developers & Civil Engineering</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
@@ -29,7 +29,6 @@
                 </ul>
             </nav>
             
-
         </div>
     </header>
 
@@ -46,17 +45,17 @@
         <div class="container metrics-grid">
             <div class="metric">
                 <i class="fa-solid fa-hard-hat fa-2x"></i>
-                <span data-target="15">0</span><span class="plus-text">+</span>
+                <span data-target="15">0</span><span class="plus-text">+</span> 
                 <p>Years Experience</p>
             </div>
             <div class="metric">
                 <i class="fa-solid fa-home fa-2x"></i>
-                <span data-target="50">0</span><span class="plus-text">+</span>
+                 <span data-target="50">0</span><span class="plus-text">+</span>
                 <p>Homes Delivered</p>
             </div>
             <div class="metric">
                 <i class="fa-solid fa-road fa-2x"></i>
-                <span data-target="100">0</span><span class="plus-text">km</span>
+                 <span data-target="100">0</span><span class="plus-text">km</span>
                 <p>Road Developed</p>
             </div>
         </div>
@@ -156,25 +155,70 @@
     </footer>
 
     <script>
+        // --- Counter Animation Function ---
+        function animateCounter(element) {
+            const target = parseInt(element.getAttribute('data-target'));
+            let current = 0;
+            const duration = 2000; // 2 seconds
+            const increment = target / (duration / 10); // Calculate step size
+
+            const updateCounter = () => {
+                current += increment;
+                if (current < target) {
+                    element.textContent = Math.ceil(current);
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    element.textContent = target; // Set final value
+                }
+            };
+            requestAnimationFrame(updateCounter);
+        }
+
+        // --- Intersection Observer (to start counting when visible) ---
+        const observerOptions = {
+            root: null, // viewport
+            rootMargin: '0px',
+            threshold: 0.5 // Start counter when 50% of the element is visible
+        };
+
+        const counterObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Find all counter spans within the visible section
+                    const counters = entry.target.querySelectorAll('.metric span[data-target]');
+                    counters.forEach(animateCounter);
+                    
+                    // Stop observing once the counting has started
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // --- Main Document Listener ---
         document.addEventListener('DOMContentLoaded', function() {
+            // 1. Mobile Menu Toggle Logic
             const toggleButton = document.querySelector('.menu-toggle');
             const header = document.getElementById('main-header');
 
             toggleButton.addEventListener('click', function() {
-                // Toggles the 'nav-open' class on the header element
                 header.classList.toggle('nav-open');
             });
 
-            // Close menu when a link is clicked (improves mobile user experience)
             document.querySelectorAll('nav a').forEach(link => {
                 link.addEventListener('click', () => {
-                    // Slight delay to allow the link to navigate before menu closes
                     setTimeout(() => {
                         header.classList.remove('nav-open');
                     }, 100); 
                 });
             });
+
+            // 2. Start observing the Trust Bar section for counter animation
+            const trustBar = document.getElementById('trust');
+            if (trustBar) {
+                counterObserver.observe(trustBar);
+            }
         });
     </script>
+
 </body>
 </html>
