@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Stands - EJ PROJECTS</title>
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* Shared Styles from Projects/About Us */
+        .page-hero {
+            background-color: var(--color-green);
+            color: var(--color-white);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .page-hero h2 {
+            font-size: 3em;
+            color: var(--color-tan);
+            margin-bottom: 10px;
+        }
+        
+        .content-section {
+            padding: 60px 0;
+        }
+
+        .content-section h3 {
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        /* Stands Specific Styles */
+        .stand-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .development-card {
+            border: 2px solid var(--color-tan);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .dev-header {
+            background-color: var(--color-green);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .dev-header h4 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        .dev-content {
+            padding: 30px;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            padding: 10px 0;
+            border-bottom: 1px dashed #ccc;
+            display: flex;
+            align-items: center;
+        }
+
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+
+        .feature-list i {
+            color: var(--color-green);
+            margin-right: 15px;
+            font-size: 1.2em;
+        }
+
+        .price-tag {
+            background-color: var(--color-tan);
+            color: var(--color-green);
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.4em;
+        }
+
+        .section-header-centered {
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        /* Map Placeholder Style */
+        .map-placeholder {
+            height: 400px;
+            background-color: #e0e0e0;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            color: #555;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 900px) {
+            .stand-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <div class="container">
+            <h1 class="logo">ETHEL JOSHUWA</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="about.html">About Us</a></li> 
+                    <li><a href="stands.html">Land Sales</a></li>
+                    <li><a href="about.html#contact-us">Contact</a></li>
+                </ul>
+            </nav>
+            
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <div class="container">
+            <h2>Available Serviced Stands</h2>
+            <p style="font-size: 1.2em;">Own a piece of tomorrow. Fully serviced, legally compliant, and construction-ready land in prime locations.</p>
+        </div>
+    </section>
+
+    <section id="developments" class="content-section">
+        <div class="container">
+            <h3>Current Developments</h3>
+            
+            <div class="stand-grid">
+                <div class="development-card">
+                    <div class="dev-header">
+                        <h4>The Glen View Project</h4>
+                        <p>Glen View, Harare</p>
+                    </div>
+                    <div class="dev-content">
+                        <ul class="feature-list">
+                            <li><i class="fa-solid fa-maximize"></i> Stand Sizes from 200m² - 450m²</li>
+                            <li><i class="fa-solid fa-water"></i> Water: Complete reticulation network installed.</li>
+                            <li><i class="fa-solid fa-road"></i> Roads: Compacted gravel (ready for tarring phase).</li>
+                            <li><i class="fa-solid fa-file-contract"></i> Title Status: Cession, Deeds processing in progress.</li>
+                            <li><i class="fa-solid fa-calendar-check"></i> Construction Ready: Yes</li>
+                        </ul>
+                        <div class="price-tag">
+                            Starting Price: <b>US$9,500</b> (Installment options available)
+                        </div>
+                        <div style="text-align: center; margin-top: 20px;">
+                            <a href="https://wa.me/263716508832" target="_blank" class="cta-button primary-cta-small">Inquire on WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="development-card">
+                    <div class="dev-header">
+                        <h4>Mabelreign West Gardens</h4>
+                        <p>Mabelreign, Bulawayo</p>
+                    </div>
+                    <div class="dev-content">
+                        <ul class="feature-list">
+                            <li><i class="fa-solid fa-maximize"></i> Stand Sizes from 300m² - 600m²</li>
+                            <li><i class="fa-solid fa-water"></i> <b>Water:</b>--------------------.</li>
+                            <li><i class="fa-solid fa-road"></i> <b>Roads:</b> Fully Tarred and complete.</li>
+                            <li><i class="fa-solid fa-file-contract"></i> <b>Title Status:</b> Ready for Deeds Transfer (Full payment required).</li>
+                            <li><i class="fa-solid fa-calendar-check"></i> <b> Ready:</b> Yes</li>
+                        </ul>
+                        <div class="price-tag">
+                            Starting Price: <b>US$15,000</b> (Cash discounts available)
+                        </div>
+                        <div style="text-align: center; margin-top: 20px;">
+                            <a href="https://wa.me/263716508832" target="_blank" class="cta-button primary-cta-small">Request Viewing</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p class="tan-text">&copy; 2025 ETHEL JOSHUWA PROJECT DEVELOPERS (PRIVATE) LIMITED. All Rights Reserved.</p>
+            <div class="contact-info">
+                <span>Call: <a href="tel:+263716508832" class="tan-text">+263 716 508 832</a></span> | 
+                <span>Email: <a href="mailto:ejprojectsdevelopers@gmail.com" class="tan-text">ejprojectsdevelopers@gmail.com</a></span>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>

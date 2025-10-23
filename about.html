@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About ETHEL JOSHUWA - Building Foundations for Tomorrow</title>
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* --- Page Specific Styles for about.html --- */
+
+        .page-hero {
+            background-color: var(--color-green);
+            color: var(--color-white);
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero .hero-background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(17, 79, 64, 0.6);
+            z-index: 1;
+        }
+
+        .page-hero .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .page-hero h2 {
+            font-size: 3em;
+            color: var(--color-tan);
+            margin-bottom: 10px;
+        }
+
+        .content-section {
+            padding: 60px 0;
+        }
+
+        .content-section h3 {
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        /* Our Story Section */
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        /* Updated to support actual img tag */
+        .story-image-container { 
+            height: 350px;
+            overflow: hidden;
+            border-radius: 8px;
+            background-color: #e0e0e0;
+        }
+
+        .story-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        /* Mission & Values */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .value-card {
+            padding: 30px 20px;
+            border: 1px solid var(--color-tan);
+            border-radius: 8px;
+            background-color: #fcfcfc;
+        }
+
+        .value-card i {
+            font-size: 2.5em;
+            color: var(--color-green);
+            margin-bottom: 15px;
+        }
+
+        .value-card h4 {
+            color: var(--color-tan);
+            margin-top: 0;
+            font-size: 1.2em;
+        }
+        
+        /* Contact Section */
+        #contact-us {
+            background-color: #f4f4f4;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            padding-top: 20px;
+        }
+
+        .contact-details h4 {
+            color: var(--color-green);
+            font-size: 1.4em;
+            margin-top: 0;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-item i {
+            color: var(--color-tan);
+            font-size: 1.5em;
+            margin-right: 15px;
+            width: 30px; /* fixed width for alignment */
+        }
+        
+        .contact-details a {
+            color: var(--color-text-dark);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-details a:hover {
+            color: var(--color-tan);
+        }
+
+        /* Social Media Icons */
+        .social-links a {
+            font-size: 2.5em; /* This sets the size for ALL icons */
+            margin-right: 15px;
+            transition: color 0.3s;
+        }
+
+        /* Specific Social Icon Colors */
+        .social-links .fa-whatsapp { color: #25D366; }
+        .social-links .fa-whatsapp:hover { color: #128C7E; }
+
+        .social-links .fa-facebook { color: #3b5998; }
+        .social-links .fa-facebook:hover { color: #1e3a6a; }
+
+        /* CORRECTED INSTAGRAM STYLING */
+        .social-links .fa-instagram { 
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .social-links .fa-instagram:hover { 
+             opacity: 0.8;
+        }
+
+        /* Media Queries for Mobile */
+        @media (max-width: 900px) {
+            .story-grid, .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .story-image-container { 
+                height: 250px;
+            }
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <div class="container">
+            <h1 class="logo">ETHEL JOSHUWA</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                     
+                    <li><a href="#contact-us">Contact</a></li>
+                </ul>
+            </nav>
+            
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <img src="consite2.jpeg" alt="Overview of civil engineering site" class="hero-background-image">
+        <div class="container">
+            <h2 class="tan-text">Who We Are</h2>
+            <p style="font-size: 1.2em;">Driven by quality, defined by delivery.</p>
+        </div>
+    </section>
+
+    <section id="about" class="content-section">
+        <div class="container story-grid">
+            <div class="story-text">
+                <h3>Our Legacy: Building Foundations for Tomorrow</h3>
+                <p><strong>ETHEL JOSHUWA PROJECT DEVELOPERS (PRIVATE) LIMITED</strong> was founded on the principle of delivering infrastructure that stands the test of time. For over 15 years, we have been a foundational force in Zimbabwe's development, specializing in turning undeveloped land into vibrant, fully serviced residential and commercial estates.</p>
+                <p>Our work spans the full spectrum of civil engineering—from complex road networks and reliable water/drainage systems to the development of construction-ready stands. We pride ourselves on meticulous planning, adherence to strict quality standards, and efficient execution that ensures projects are completed on budget and on time.</p>
+            </div>
+            <div class="story-image-container"> 
+                <img src="logo1.png" alt="Image representing company history or a completed project">
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section" style="background-color: #f8f8f8;">
+        <div class="container">
+            <h3>Our Core Values</h3>
+            <div class="values-grid">
+                <div class="value-card">
+                    <i class="fa-solid fa-gem"></i>
+                    <h4>Quality & Durability</h4>
+                    <p>We use superior materials and world-class engineering standards to guarantee long-lasting infrastructure.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fa-solid fa-clock"></i>
+                    <h4>Timely Delivery</h4>
+                    <p>Our project management is rigorous, ensuring we meet all deadlines and hand over completed stands as promised.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fa-solid fa-handshake"></i>
+                    <i class="fa-solid fa-gem"></i>
+                    <h4>Integrity & Trust</h4>
+                    <p>Transparency in all transactions, ensuring our clients receive clear title and value for their investment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact-us" class="content-section">
+        <div class="container">
+            <h3>Get In Touch</h3>
+            <div class="contact-grid">
+                
+                <div class="contact-details">
+                    <h4>Direct Contact Information</h4>
+                    
+                    <div class="contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <div>
+                            <strong>Phone:</strong><br>
+                            <a href="tel:+263716508832">+263 716 508 832</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div>
+                            <strong>Email:</strong><br>
+                            <a href="mailto:ejprojectsdevelopers@gmail.com">ejprojectsdevelopers@gmail.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <strong>Office Location:</strong><br>
+                            address #########
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-social">
+                    <h4>Connect with EJ PROJECTS</h4>
+                    <p>Follow us on our social channels for project updates, available stands, and company news.</p>
+                    <div class="social-links">
+                        <a href="https://wa.me/263716508832" target="_blank" aria-label="WhatsApp">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                        <a href="[Your Facebook URL]" target="_blank" aria-label="Facebook">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                        <a href="[Your Instagram URL]" target="_blank" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </div>
+                    <div style="margin-top: 30px;">
+                      
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p class="tan-text">&copy; 2025 ETHEL JOSHUWA PROJECT DEVELOPERS (PRIVATE) LIMITED. All Rights Reserved.</p>
+            <div class="contact-info">
+                <span>Call: <a href="tel:+263716508832" class="tan-text">+263 716 508 832</a></span> | 
+                <span>Email: <a href="mailto:ejprojectsdevelopers@gmail.com" class="tan-text">ejprojectsdevelopers@gmail.com</a></span>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
