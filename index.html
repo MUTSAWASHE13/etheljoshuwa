@@ -9,19 +9,27 @@
 </head>
 <body>
     
-    <header>
+    <header id="main-header">
         <div class="container">
-            <h1 class="logo">EJ PROJECTS</h1>
+            
+            <div class="header-main">
+                <h1 class="logo">ETHEL JOSHUWA</h1>
+                <button class="menu-toggle" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
             <nav>
                 <ul>
-                    
+                    <li><a href="#services">Services</a></li>
                     <li><a href="projects.html">Projects</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="about.html#contact-us">Contact</a></li>
+                    <li><a href="about.html">About Us</a></li> 
                     <li><a href="stands.html">Land Sales</a></li>
+                    <li><a href="about.html#contact-us">Contact</a></li>
                 </ul>
             </nav>
             
+
         </div>
     </header>
 
@@ -147,7 +155,26 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggleButton = document.querySelector('.menu-toggle');
+            const header = document.getElementById('main-header');
+
+            toggleButton.addEventListener('click', function() {
+                // Toggles the 'nav-open' class on the header element
+                header.classList.toggle('nav-open');
+            });
+
+            // Close menu when a link is clicked (improves mobile user experience)
+            document.querySelectorAll('nav a').forEach(link => {
+                link.addEventListener('click', () => {
+                    // Slight delay to allow the link to navigate before menu closes
+                    setTimeout(() => {
+                        header.classList.remove('nav-open');
+                    }, 100); 
+                });
+            });
+        });
+    </script>
 </body>
 </html>
-
