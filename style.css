@@ -30,7 +30,7 @@ h2, h3, h4 {
     color: var(--color-tan) !important;
 }
 
-/* --- Header & Navigation --- */
+/* --- Header & Navigation (Desktop) --- */
 header {
     background-color: var(--color-green);
     padding: 15px 0;
@@ -46,6 +46,14 @@ header .container {
     align-items: center;
 }
 
+/* New element wrapper for Logo and Toggle button on mobile */
+.header-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: auto; /* Default for desktop */
+}
+
 .logo {
     color: var(--color-white);
     margin: 0;
@@ -53,6 +61,7 @@ header .container {
     letter-spacing: 1px;
 }
 
+/* Desktop Navigation */
 nav ul {
     list-style: none;
     padding: 0;
@@ -72,6 +81,19 @@ nav a:hover {
     color: var(--color-tan);
 }
 
+/* Hamburger Menu Button (Initially hidden on Desktop) */
+.menu-toggle {
+    display: none; 
+    background: none;
+    border: none;
+    color: var(--color-white);
+    font-size: 1.5em;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 101; 
+}
+
+
 /* --- Call-to-Action Buttons --- */
 .cta-button {
     text-decoration: none;
@@ -88,7 +110,7 @@ nav a:hover {
 
 .primary-cta {
     background-color: var(--color-tan);
-    color: var(--color-white); 
+    color: var(--color-green); 
 }
 
 .primary-cta:hover {
@@ -127,17 +149,16 @@ nav a:hover {
     text-align: center;
     position: relative;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
-    overflow: hidden; /* Important for containing the image */
+    overflow: hidden; 
 }
 
-/* New: Style for the Hero background image */
 .hero-background-image {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures image covers the area */
+    object-fit: cover; 
     z-index: 0;
 }
 
@@ -222,7 +243,6 @@ nav a:hover {
     margin-bottom: 50px;
 }
 
-/* Styles for Detailed Service Section */
 .category-heading {
     text-align: center;
     font-size: 1.8em;
@@ -252,20 +272,18 @@ nav a:hover {
     transform: translateY(-8px);
 }
 
-/* Container for service image to control its size */
 .service-image-container {
     height: 120px; 
     overflow: hidden; 
     margin-bottom: 15px;
     border-radius: 4px;
-    background-color: #e6e6e6; /* Placeholder color before image is loaded */
+    background-color: #e6e6e6; 
 }
 
-/* New: Style for the actual image inside the container */
 .service-image {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures image fills the container without distortion */
+    object-fit: cover; 
 }
 
 .service-card h4 {
@@ -305,16 +323,71 @@ footer a {
 
 @media (max-width: 900px) {
     
-    header .container {
-        flex-direction: column;
-        text-align: center;
+    /* 1. Show the hamburger icon and establish header layout */
+    .menu-toggle {
+        display: block; 
     }
     
-    nav ul {
-        justify-content: center;
-        margin: 10px 0;
+    header .cta-button {
+        display: none; /* Hide the desktop CTA button */
+    }
+    
+    /* Make logo and toggle take full width on mobile */
+    header .container {
+        flex-direction: column; /* Stack logo/nav/cta */
+        align-items: flex-start; /* Align everything left */
     }
 
+    .header-main {
+        width: 100%; /* Ensure logo and toggle are spaced correctly */
+        padding-bottom: 5px;
+    }
+    
+    /* 2. Navigation setup for mobile (Hidden by default) */
+    nav {
+        /* Full width, positioned to drop down from header */
+        position: absolute;
+        top: 60px; 
+        left: 0;
+        width: 100%;
+        background-color: var(--color-green);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        
+        /* Hiding mechanism */
+        max-height: 0; 
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+    }
+
+    /* 3. State when the menu is active (toggled by JavaScript) */
+    #main-header.nav-open nav {
+        max-height: 500px; /* Big enough to fit all links */
+    }
+    
+    /* 4. Style the vertical list */
+    nav ul {
+        display: block; /* Make list items stack vertically */
+        text-align: center; 
+        padding: 10px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    nav ul li {
+        margin: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    nav ul li:last-child {
+        border-bottom: none;
+    }
+
+    nav ul li a {
+        padding: 15px 0; /* Large touch target */
+        display: block;
+        width: 100%;
+    }
+
+    /* Standard content adjustments */
     .hero h2 {
         font-size: 2.5em;
     }
@@ -323,7 +396,6 @@ footer a {
     }
 
     .metrics-grid,
-    .services-grid,
     .detailed-grid { 
         grid-template-columns: 1fr; 
         gap: 40px; 
@@ -351,11 +423,6 @@ footer a {
     
     header .logo {
         font-size: 1.5em;
-    }
-
-    nav ul {
-        flex-wrap: wrap; 
-        margin-top: 5px;
     }
 
     .hero {
